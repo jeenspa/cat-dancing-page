@@ -1,0 +1,118 @@
+.dancing-cat-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  padding: 40px 20px 20px;
+}
+
+/* 배경 원 */
+.bg-circle {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(233,69,96,0.15) 0%, rgba(245,166,35,0.08) 60%, transparent 100%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s;
+}
+
+.bg-circle--active {
+  animation: bgPulse var(--dance-duration, 1.2s) ease-in-out infinite;
+}
+
+/* 음표 */
+.notes-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.music-note {
+  position: absolute;
+  top: 60px;
+  font-size: 1.6rem;
+  color: var(--accent-secondary);
+  animation: floatNote 1.2s ease-out forwards;
+  user-select: none;
+  filter: drop-shadow(0 0 4px rgba(245,166,35,0.6));
+}
+
+/* 고양이 */
+.cat-container {
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cat-container--dancing {
+  animation: dance 1.2s ease-in-out infinite;
+}
+
+.cat-container:not(.cat-container--dancing):hover {
+  transform: scale(1.05);
+}
+
+.cat-image {
+  width: 200px;
+  height: 220px;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+}
+
+/* 그림자 */
+.cat-shadow {
+  width: 120px;
+  height: 18px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  margin-top: 4px;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.cat-shadow--dancing {
+  animation: shadowPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.5; }
+  50%       { transform: scaleX(0.6); opacity: 0.2; }
+}
+
+/* 상태 텍스트 */
+.cat-status {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  z-index: 2;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+  .cat-image {
+    width: 160px;
+    height: 176px;
+  }
+
+  .bg-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .music-note {
+    font-size: 1.3rem;
+  }
+}

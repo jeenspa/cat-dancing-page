@@ -1,0 +1,108 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 20px 16px 40px;
+}
+
+/* 헤더 */
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-top: 20px;
+}
+
+.app-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #e94560, #f5a623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+
+.app-title--glow {
+  animation: titleGlow 2s ease-in-out infinite;
+}
+
+.app-subtitle {
+  color: var(--text-muted);
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  letter-spacing: 0.08em;
+}
+
+/* 메인 */
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* 무대 */
+.stage {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.2s;
+  outline: none;
+}
+
+.stage:hover {
+  box-shadow: 0 12px 50px rgba(233,69,96,0.2), 0 8px 40px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+.stage:focus-visible {
+  box-shadow: 0 0 0 3px rgba(233,69,96,0.6);
+}
+
+/* 푸터 */
+.app-footer {
+  margin-top: auto;
+  padding-top: 32px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* 반응형 - 태블릿 */
+@media (min-width: 600px) {
+  .app {
+    padding: 32px 24px 48px;
+  }
+
+  .app-header {
+    margin-bottom: 40px;
+  }
+
+  .app-main {
+    gap: 32px;
+    max-width: 520px;
+  }
+}
+
+/* 반응형 - 데스크탑 */
+@media (min-width: 900px) {
+  .app-main {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 820px;
+    gap: 40px;
+  }
+
+  .stage {
+    flex: 1;
+    min-width: 320px;
+  }
+}
