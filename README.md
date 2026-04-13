@@ -20,7 +20,7 @@ If you are developing a production application, we recommend using TypeScript wi
 Deploy Test - 260414
 
 최초 deploy 후 웹 접속 시 아무 화면도 나오지 않음.
-수종 지시하고 완료 후 다시 접속 했으나 그래도 안 나옴.
+수정 지시하고 완료 후 다시 접속 했으나 그래도 안 나옴.
 한 번 더 수정 후 정상 작동
 
 claude report :
