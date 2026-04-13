@@ -15,6 +15,8 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+-------------------------------------------------------------
+
 Deploy Test - 260414
 최초 deploy 후 웹 접속 시 아무 화면도 나오지 않음.
 수종 지시하고 완료 후 다시 접속 했으나 그래도 안 나옴.
